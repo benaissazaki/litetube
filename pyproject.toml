@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "litetube"
+version = "0.1.0"
+description = "A lite, distraction-free web client for Youtube"
+authors = ["Zaki Benaissa <zakben45@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^5.0.1"
+django-environ = "^0.11.2"
+pytube = "^15.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
