@@ -1,7 +1,7 @@
 {% extends "base.html" %} 
 
 {% block content %}
-<form action="" method="get">
+<form action="{% url 'result' %}" method="get">
     {{ video_search_form }}
     <button>Search</button>
 </form>

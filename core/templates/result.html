@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block head %}
+<style>
+    h1 {
+        text-align: center;
+    }
+    .video-preview {
+        max-width: 800px;
+        margin: 50px auto;
+        width: 100%;
+        display: flex;
+        gap: 20px;
+    }
+
+    .video-thumbnail {
+        width: 250px;
+    }
+</style>
+{% endblock head %}
+
+{% block content %}
+<h1>Search results for {{ request.GET.query }}</h1>
+{% for video in search_results %}
+<div class="video-preview">
+    <img src="{{ video.thumbnail_url }}" class="video-thumbnail">
+    <div class="metadata">
+        <h2>{{ video.title }}</h2>
+        <h3>{{ video.author }}</h3>
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}
