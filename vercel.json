@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "litetube/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "litetube/wsgi.py"
+    }
+  ]
+}
