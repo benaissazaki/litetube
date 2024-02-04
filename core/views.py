@@ -25,6 +25,7 @@ def video_view(request, video_id):
         .desc()
     )
 
-    context = {"video": video, "streams": streams}
+    audio_stream = video.streams.filter(only_audio=True).first().url
+    context = {"video": video, "streams": streams, "audio_stream_url": audio_stream}
 
     return render(request, "video.html", context)
