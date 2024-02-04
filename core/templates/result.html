@@ -25,7 +25,7 @@
 <div class="video-preview">
     <img src="{{ video.thumbnail_url }}" class="video-thumbnail">
     <div class="metadata">
-        <h2>{{ video.title }}</h2>
+        <h2><a href="{% url 'video' video.video_id %}">{{ video.title }}</a></h2>
         <h3>{{ video.author }}</h3>
     </div>
 </div>

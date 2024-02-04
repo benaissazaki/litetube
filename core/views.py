@@ -14,5 +14,10 @@ def result_view(request):
     search = pytube.Search(search_query)
 
     context = {"search_results": search.results}
-
     return render(request, "result.html", context)
+
+
+def video_view(request, video_id):
+    context = {"video_id": video_id}
+
+    return render(request, "video.html", context)
