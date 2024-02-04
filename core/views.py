@@ -18,6 +18,13 @@ def result_view(request):
 
 
 def video_view(request, video_id):
-    context = {"video_id": video_id}
+    video = pytube.YouTube(f"http://youtube.com/watch?v={video_id}")
+    streams = (
+        video.streams.filter(progressive=True, file_extension="mp4")
+        .order_by("resolution")
+        .desc()
+    )
+
+    context = {"video": video, "streams": streams}
 
     return render(request, "video.html", context)
