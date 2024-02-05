@@ -1,0 +1,26 @@
+h1 {
+    text-align: center;
+}
+
+h2 {
+    word-break:break-word;
+    font-size: 17px
+}
+
+h3 {
+    font-size: 15px;
+}
+
+.video-preview {
+    max-width: 800px;
+    margin: 50px auto;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center
+}
+
+.video-thumbnail {
+    width: 200px;
+    height: 134px
+}

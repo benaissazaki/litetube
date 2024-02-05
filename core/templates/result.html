@@ -1,22 +1,8 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block head %}
-<style>
-    h1 {
-        text-align: center;
-    }
-    .video-preview {
-        max-width: 800px;
-        margin: 50px auto;
-        width: 100%;
-        display: flex;
-        gap: 20px;
-    }
-
-    .video-thumbnail {
-        width: 250px;
-    }
-</style>
+<link rel="stylesheet" href="{% static 'css/result.css' %}">
 {% endblock head %}
 
 {% block content %}

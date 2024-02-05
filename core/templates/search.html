@@ -1,8 +1,21 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/search.css' %}">
+{% endblock head %}
 
 {% block content %}
-<form action="{% url 'result' %}" method="get">
-    {{ video_search_form }}
-    <button>Search</button>
-</form>
+<main>
+    <div>
+        <h1>LiteTube</h1>
+        <p>Unwaste your time</p>
+        <form action="{% url 'result' %}" method="get">
+            <div class="search-bar">
+                {{ video_search_form.query }}
+                <button>🔎</button>
+            </div>
+        </form>
+    </div>
+</main>
 {% endblock content %}
