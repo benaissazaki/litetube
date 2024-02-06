@@ -1,26 +1,11 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block head %}
-<style>
-    video {
-        width: 100%;
-        max-width: 800px;
-        margin: 0 auto;
-        margin-top: 50px;
-        display: block;
-    }
-
-    h1,
-    a {
-        text-align: center;
-        display: block;
-    }
-</style>
+<link rel="stylesheet" href="{% static 'css/video.css' %}">
 {% endblock head %}
 
-
 {% block content %}
-
 <video src="{{ streams.first.url }}" controls></video>
 <h1>{{ video.title }}</h1>
 <a href="{{ audio_stream_url }}" target="_blank">Download as mp3</a>
