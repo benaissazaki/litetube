@@ -6,7 +6,45 @@
 {% endblock head %}
 
 {% block content %}
-<video src="{{ streams.first.url }}" controls></video>
+
+<video src="{{ stream.first.url }}" id="video" controls>
+</video>
+
+<div class="resolution-controls">
+  {% for stream in streams %}
+  <button onclick="changeResolution('{{ stream.resolution }}')" data-resolution="{{ stream.resolution }}">
+    {{stream.resolution }}
+  </button>
+  {% endfor %}
+</div>
+
 <h1>{{ video.title }}</h1>
 <a href="{{ audio_stream_url }}" target="_blank">Download as mp3</a>
+
+<script>
+  const streams = {{ streams_json | safe }}
+
+  const videoElement = document.getElementById("video");
+  var currentResolution = Object.keys(streams)[0];
+  changeResolution(currentResolution);
+
+  function changeResolution(resolution) {
+    const currentResolutionButton = document.querySelector(
+      `[data-resolution="${currentResolution}"]`
+    );
+    currentResolutionButton.disabled = false;
+
+    const videoCurrentTime = videoElement.currentTime;
+    videoElement.setAttribute("src", streams[resolution]);
+    videoElement.currentTime = videoCurrentTime;
+    videoElement.play();
+
+    currentResolution = resolution;
+
+    const newResolutionButton = document.querySelector(
+      `[data-resolution="${currentResolution}"]`
+    );
+    newResolutionButton.disabled = true;
+  }
+</script>
 {% endblock content %}
