@@ -4,6 +4,7 @@
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/video.css' %}">
 {% endblock head %}
+{% block title %}{{ video.title }} - LiteTube{% endblock %}
 
 {% block content %}
 
@@ -19,7 +20,7 @@
 </div>
 
 <h1>{{ video.title }}</h1>
-<a href="{{ audio_stream_url }}" target="_blank">Download as mp3</a>
+<a href="{{ audio_stream_url }}" target="_blank" download="test.mp3">Download as mp3</a>
 
 <script>
   const streams = {{ streams_json | safe }}

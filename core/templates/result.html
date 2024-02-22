@@ -5,6 +5,8 @@
 <link rel="stylesheet" href="{% static 'css/result.css' %}">
 {% endblock head %}
 
+{% block title %}"{{ request.GET.query }}" search results - LiteTube{% endblock %}
+
 {% block content %}
 <h1>Search results for {{ request.GET.query }}</h1>
 {% for video in search_results %}
