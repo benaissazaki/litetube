@@ -3,6 +3,7 @@
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/result.css' %}">
+<meta property="og:image" content="{% static 'img/banner.jpg' %}" />
 {% endblock head %}
 
 {% block title %}"{{ request.GET.query }}" search results - LiteTube{% endblock %}

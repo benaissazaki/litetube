@@ -3,6 +3,8 @@
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/search.css' %}">
+<meta property="og:title" content="LiteTube - Zero-distraction Youtube client" />
+<meta property="og:image" content="{% static 'img/banner.jpg' %}" />
 {% endblock head %}
 
 {% block title %}LiteTube - Zero-distraction Youtube client{% endblock %}
@@ -10,7 +12,7 @@
 {% block content %}
 <main>
     <div>
-        <h1>LiteTube</h1>
+        <img src="{% static 'img/logo.png' %}" alt="LiteTube Logo">
         <p>Unwaste your time</p>
         <form action="{% url 'result' %}" method="get">
             <div class="search-bar">

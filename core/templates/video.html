@@ -3,7 +3,9 @@
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/video.css' %}">
+<meta property="og:image" content="{{ video.thumbnail_url }}" />
 {% endblock head %}
+
 {% block title %}{{ video.title }} - LiteTube{% endblock %}
 
 {% block content %}
