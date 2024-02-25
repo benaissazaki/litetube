@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "pwa",
     "core",
 ]
 
@@ -81,9 +82,7 @@ WSGI_APPLICATION = "litetube.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-
-}
+DATABASES = {}
 
 
 # Password validation
@@ -122,12 +121,22 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, "static"),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles_build", "static")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# PWA settings
+PWA_APP_NAME = "LiteTube"
+PWA_APP_DESCRIPTION = "Distraction-free Youtube client"
+PWA_APP_ICONS = [{"src": "/static/img/logo.png", "sizes": "160x160"}]
+PWA_APP_SPLASH_SCREEN = [
+    {
+        "src": "/static/img/banner.jpg",
+    }
+]
