@@ -9,6 +9,16 @@
 {% block title %}{{ video.title }} - LiteTube{% endblock %}
 
 {% block content %}
+<nav>
+  <ul>
+      <li>
+          <a href="{% url 'search' %}">Search</a>
+      </li>
+      <li>
+        <a href="javascript:history.back()">Go back</a>
+    </li>
+  </ul>
+</nav>
 
 <video src="{{ stream.first.url }}" id="video" controls>
 </video>

@@ -9,6 +9,13 @@
 {% block title %}"{{ request.GET.query }}" search results - LiteTube{% endblock %}
 
 {% block content %}
+<nav>
+    <ul>
+        <li>
+            <a href="{% url 'search' %}">Search</a>
+        </li>
+    </ul>
+</nav>
 <h1>Search results for {{ request.GET.query }}</h1>
 {% for video in search_results %}
 <div class="video-preview">
