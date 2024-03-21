@@ -134,7 +134,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # PWA settings
 PWA_APP_NAME = "LiteTube"
 PWA_APP_DESCRIPTION = "Distraction-free Youtube client"
-PWA_APP_ICONS = [{"src": "/static/img/logo.png", "sizes": "160x160"}]
+PWA_APP_ICONS = [{"src": "/static/img/favicon.png", "sizes": "160x160"}]
 PWA_APP_SPLASH_SCREEN = [
     {
         "src": "/static/img/banner.jpg",
